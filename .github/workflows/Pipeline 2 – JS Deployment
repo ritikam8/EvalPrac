@@ -1,0 +1,19 @@
+name: Pipeline 2 - Deploy JS
+
+on:
+  push:
+    paths:
+      - 'script.js'
+
+jobs:
+  deploy-js:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Log Deployed File
+        run: |
+          echo "Deploying JS changes..."
+          ls -l script.js
